@@ -67,7 +67,26 @@ toDoRouter.route('/update/:id').post((req, res) => {
                 res.json('Task Updated');
             })
                 .catch(err => {
-                    res.send("Task Updated!")
+                    res.send("Unable to update task!")
+                })
+
+
+        }
+    })
+})
+
+toDoRouter.route('/remove/:id').delete((req, res) => {
+    let id = req.params.id;
+    toDoList.findById(id, (err, todo) => {
+        if (!todo) {
+            res.status(404).send("Id does not exist")
+        }
+        else {
+            todo.remove().then(res => {
+                res.json('Task Removed');
+            })
+                .catch(err => {
+                    res.json(err)
                 })
 
 
