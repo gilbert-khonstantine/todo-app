@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from "react-router-dom";
 
 function ToDo(props) {
-    function handleClick(e) {
+    function onDelete(e) {
         e.preventDefault();
         axios.delete("http://localhost:4000/remove/" + props.todo._id)
     }
@@ -15,7 +15,7 @@ function ToDo(props) {
         <td>
             <Link to={"/edit/" + props.todo._id}>Edit</Link>
             &emsp;
-            <a onClick={handleClick} href={"/"}>Remove</a>
+            <a onClick={onDelete} href={"/"}>Remove</a>
         </td>
     </tr>)
 }
