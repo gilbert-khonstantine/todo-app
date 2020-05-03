@@ -97,7 +97,7 @@ export default class EditToDo extends Component {
                     </div>
                     <div className="form-group">
                         <label>Deadline</label>
-                        <input type="text" className="form-control" value={this.state.deadline} onChange={this.OnChangeDeadline} />
+                        <input type="date" className=" form-control" value={this.state.deadline} onChange={this.OnChangeDeadline} />
                     </div>
                     <div className="form-group">
                         <label>Description</label>

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import ToDoList from "./components/todo-list.component";
 import CreateToDo from "./components/create-todo.component";
 import EditToDo from "./components/edit-todo.component";
+import Dashboard from './components/dashboard.component';
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light" >
-            <a href="/" className="navbar-brand">Mern To-Do App</a>
+            <a href="/dashboard" className="navbar-brand">Mern To-Do App</a>
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a className="nav-link" href="/">To Do List</a>
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="/" exact component={ToDoList} />
           <Route path="/edit/:id" component={EditToDo} />
           <Route path="/create" component={CreateToDo} />
+          <Route path="/dashboard" component={Dashboard} />
         </div>
       </Router >
     )
